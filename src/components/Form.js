@@ -73,7 +73,7 @@ function Form({ onCalculate }) {
                         onChange={(e) => setTimePeriod(e.target.value)}
                     />
                 </div>
-                <button type="submit">Calculate</button>
+                <button type="submit" className="form-button">Calculate</button>
             </form>
         </div>
     );
