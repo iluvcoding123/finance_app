@@ -1,0 +1,23 @@
+/* Home Page Container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: var(--bg-color, #f4f4f4); /* Optional: background color */
+    color: var(--text-color, #333); /* Optional: text color */
+}
+
+/* Anchor Styling (Optional) */
+.home-container a {
+    color: var(--link-color, #007BFF);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-container a:hover {
+    text-decoration: underline;
+}

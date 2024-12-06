@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import InterestCalculator from "./pages/InterestCalculator";
-import PageButtons from "./components/PageButtons"; // Updated import
 import "./App.css";
 
 function App() {
@@ -15,21 +15,11 @@ function App() {
 
     return (
         <Router>
-            <div className="app-container">
-                {/* Theme Toggle Button */}
-                <button onClick={toggleTheme} className="theme-toggle">
-                    {isDarkTheme ? "Switch to Light Theme" : "Switch to Dark Theme"}
-                </button>
-
-                {/* Page Buttons */}
-                <PageButtons />
-
-                {/* Page Routes */}
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/interestcalculator" element={<InterestCalculator />} />
-                </Routes>
-            </div>
+            <Navbar toggleTheme={toggleTheme} />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/interestcalculator" element={<InterestCalculator />} />
+            </Routes>
         </Router>
     );
 }

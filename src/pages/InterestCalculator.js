@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./InterestCalculator.css";
 import Form from "../components/Form";
 import Results from "../components/Results";
 
@@ -27,8 +28,7 @@ function InterestCalculator() {
     };
 
     return (
-        <div>
-            {/* Removed the redundant <h2> */}
+        <div className="calculator-container">
             <Form onCalculate={calculateSavings} />
             <Results results={results} />
         </div>
