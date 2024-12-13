@@ -6,12 +6,16 @@ import InterestCalculator from "./pages/InterestCalculator";
 import "./App.css";
 
 function App() {
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(true);
 
     const toggleTheme = () => {
         setIsDarkTheme(!isDarkTheme);
         document.body.classList.toggle("dark-theme");
     };
+
+    React.useEffect(() => {
+        document.body.classList.add("dark-theme");
+    }, []);
 
     return (
         <Router>

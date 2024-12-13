@@ -65,3 +65,33 @@ body.dark-theme {
   --input-border-color: #666; /* Subtle border for inputs */
   --input-focus-border-color: #007BFF; /* Highlight border color for focused input */
 }
+
+:root {
+    /* Dark theme as default */
+    --bg-color: #333;
+    --text-color: #f4f4f4;
+    --form-bg: #444;
+    --button-bg-color: #555;
+    --button-hover-bg-color: #777;
+    --button-text-color: #f4f4f4;
+    --input-bg-color: #444;
+    --input-text-color: #f4f4f4;
+    --input-border-color: #666;
+    --input-focus-border-color: #007BFF;
+    --link-color: #1E90FF;
+}
+
+/* Light theme overrides when .dark-theme is not present */
+body:not(.dark-theme) {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --form-bg: white;
+    --button-bg-color: #007BFF;
+    --button-hover-bg-color: #0056b3;
+    --button-text-color: white;
+    --input-bg-color: white;
+    --input-text-color: #333;
+    --input-border-color: #ccc;
+    --input-focus-border-color: #007BFF;
+    --link-color: #007BFF;
+}
