@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Dropdown from "./Dropdown";
+import Dropdown from "./Dropdown"; // Import Dropdown component
 
 function Navbar({ toggleTheme }) {
     return (
@@ -11,9 +12,13 @@ function Navbar({ toggleTheme }) {
                     alt="Menu Button"
                     className="menu-button-icon"
                 />
-                <Dropdown />
+                <Dropdown /> {/* Add Dropdown component here */}
             </div>
-            <h1 className="navbar-title">Home</h1>
+            <div className="navbar-title-container">
+                <Link to="/" className="navbar-title">
+                    Home
+                </Link>
+            </div>
             <div className="theme-toggle" onClick={toggleTheme}>
                 <img
                     src={`${process.env.PUBLIC_URL}/ThemeToggleButton.png`}

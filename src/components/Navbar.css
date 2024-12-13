@@ -13,14 +13,27 @@
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: visible; /* Ensure scaled elements are not clipped */
 }
 
-/* Navbar Title */
+/* Navbar Title Styling (Home Button) */
 .navbar-title {
-    font-size: 20px;
+    font-size: 24px; /* Slightly larger font */
     text-align: center;
-    flex-grow: 1;
-    margin: 0;
+    text-decoration: none !important; /* Prevent underline */
+    color: #ffffff !important; /* Always white */
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block; /* Ensure the hover area is limited to the text */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover Effect for Home Button */
+.navbar-title:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+    color: #f0f0f0; /* Optional color change */
+    text-decoration: none !important; /* Prevent underline */
 }
 
 /* Menu Icon */
