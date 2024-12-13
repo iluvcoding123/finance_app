@@ -22,10 +22,13 @@ function InterestCalculator() {
 
         const totalContributions = startingAmount + monthlySavings * totalMonths;
         const interestEarned = totalSavings - totalContributions;
+        const returnMultiple = (totalSavings / totalContributions).toFixed(2);
 
         setResults({
             totalSavings: totalSavings.toFixed(2),
+            totalContributions: totalContributions.toFixed(2),
             interestEarned: interestEarned.toFixed(2),
+            returnMultiple: returnMultiple
         });
 
         const labels = Array.from({ length: balances.length }, (_, i) => `Year ${i}`);
