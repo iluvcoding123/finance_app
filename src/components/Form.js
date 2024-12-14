@@ -6,34 +6,27 @@ function Form({ onCalculate }) {
     const [monthlySavings, setMonthlySavings] = useState("");
     const [interestRate, setInterestRate] = useState("");
     const [timePeriod, setTimePeriod] = useState("");
+    const [investmentType, setInvestmentType] = useState("compound");
+
+    const handleInvestmentTypeChange = (e) => {
+        const selectedType = e.target.value;
+        if (selectedType === 'mixed') {
+            alert("Mixed Portfolio calculations are a premium feature coming soon!");
+            setInvestmentType("compound"); // Reset to default option
+        } else {
+            setInvestmentType(selectedType);
+        }
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // Validate inputs
-        if (
-            isNaN(startingAmount) || isNaN(monthlySavings) ||
-            isNaN(interestRate) || isNaN(timePeriod) ||
-            startingAmount < 0 || monthlySavings < 0 ||
-            interestRate < 0 || timePeriod < 0
-        ) {
-            alert("Please enter valid positive numbers for all fields.");
-            return;
-        }
-
-        // Pass data back to App.js
         onCalculate({
-            startingAmount: parseFloat(startingAmount),
-            monthlySavings: parseFloat(monthlySavings),
-            interestRate: parseFloat(interestRate) / 100, // Convert to decimal
-            timePeriod: parseFloat(timePeriod),
+            startingAmount: Number(startingAmount),
+            monthlySavings: Number(monthlySavings),
+            interestRate: Number(interestRate),
+            timePeriod: Number(timePeriod),
+            investmentType: investmentType
         });
-
-        // Clear the form fields (optional)
-        setStartingAmount("");
-        setMonthlySavings("");
-        setInterestRate("");
-        setTimePeriod("");
     };
 
     return (
@@ -43,35 +36,62 @@ function Form({ onCalculate }) {
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label>Starting Amount:</label>
+                    <label htmlFor="investmentType">Investment Type:</label>
+                    <select
+                        id="investmentType"
+                        value={investmentType}
+                        onChange={handleInvestmentTypeChange}
+                        required
+                    >
+                        <option value="compound">High-Yield Savings Account</option>
+                        <option value="stocks">Stocks & Index Funds</option>
+                        <option value="mixed">Mixed Portfolio</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="startingAmount">Initial Investment ($):</label>
                     <input
                         type="number"
+                        id="startingAmount"
                         value={startingAmount}
                         onChange={(e) => setStartingAmount(e.target.value)}
+                        min="0"
+                        required
                     />
                 </div>
                 <div className="form-group">
-                    <label>Monthly Savings:</label>
+                    <label htmlFor="monthlySavings">Monthly Contribution ($):</label>
                     <input
                         type="number"
+                        id="monthlySavings"
                         value={monthlySavings}
                         onChange={(e) => setMonthlySavings(e.target.value)}
+                        min="0"
+                        required
                     />
                 </div>
                 <div className="form-group">
-                    <label>Interest Rate (%):</label>
+                    <label htmlFor="interestRate">
+                        {investmentType === "compound" ? "Interest Rate" : "Expected Return Rate"} (%):
+                    </label>
                     <input
                         type="number"
+                        id="interestRate"
                         value={interestRate}
                         onChange={(e) => setInterestRate(e.target.value)}
+                        step="0.01"
+                        required
                     />
                 </div>
                 <div className="form-group">
-                    <label>Time Period (Years):</label>
+                    <label htmlFor="timePeriod">Time Period (years):</label>
                     <input
                         type="number"
+                        id="timePeriod"
                         value={timePeriod}
                         onChange={(e) => setTimePeriod(e.target.value)}
+                        min="1"
+                        required
                     />
                 </div>
                 <button type="submit" className="form-button">Calculate</button>

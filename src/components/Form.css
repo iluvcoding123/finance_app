@@ -75,3 +75,20 @@
   .form-button:active {
     transform: scale(0.98);
   }
+  
+  /* Add these styles to your existing Form.css */
+  select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--input-border-color, #ccc);
+    border-radius: 4px;
+    background-color: var(--input-bg-color, white);
+    color: var(--input-text-color, #333);
+    font-size: 16px;
+  }
+  
+  select:focus {
+    outline: none;
+    border-color: var(--input-focus-border-color, #007BFF);
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+  }

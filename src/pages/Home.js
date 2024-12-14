@@ -10,7 +10,7 @@ function Home() {
                     className="profile-image"
                 />
                 <div className="text-content">
-                    <h1>Welcome to the Finance App</h1>
+                    <h1>Welcome to the doji365</h1>
                     <p>
                         This is a personal finance application developed by Justin Kim.
                         This app will help users with little to no finance knowledge
