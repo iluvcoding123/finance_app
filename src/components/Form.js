@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Form.css";
 
 function Form({ onCalculate }) {
-    const [startingAmount, setStartingAmount] = useState("");
-    const [monthlySavings, setMonthlySavings] = useState("");
+    const [startingAmount, setStartingAmount] = useState("0");
+    const [monthlySavings, setMonthlySavings] = useState("0");
     const [interestRate, setInterestRate] = useState("");
     const [timePeriod, setTimePeriod] = useState("");
     const [investmentType, setInvestmentType] = useState("compound");
