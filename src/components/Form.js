@@ -39,7 +39,7 @@ function Form({ onCalculate }) {
     return (
         <div className="form-container">
             <div className="form-header">
-                <h2>Compound Interest Calculator</h2>
+                <h2>Investment Growth Simulator</h2>
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">

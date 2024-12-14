@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./InterestCalculator.css";
+import "./GrowthSim.css";
 import Form from "../components/Form";
 import Results from "../components/Results";
-import Chart from "../components/Chart"; // Import the Chart component
+import Chart from "../components/Chart";
 
-function InterestCalculator() {
+function GrowthSim() {
     const [results, setResults] = useState(null);
     const [chartData, setChartData] = useState(null);
 
@@ -55,4 +55,4 @@ function InterestCalculator() {
     );
 }
 
-export default InterestCalculator;
+export default GrowthSim;

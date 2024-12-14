@@ -6,8 +6,7 @@ function Dropdown() {
     return (
         <div className="dropdown-menu">
             <Link to="/" className="dropdown-item">Home</Link>
-            <Link to="/interestcalculator" className="dropdown-item">Compound Interest Calculator</Link>
-            {/* Add more links as needed */}
+            <Link to="/growthsim" className="dropdown-item">Investment Growth Simulator</Link>
         </div>
     );
 }

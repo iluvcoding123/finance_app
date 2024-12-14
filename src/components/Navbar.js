@@ -16,7 +16,7 @@ function Navbar({ toggleTheme }) {
             </div>
             <div className="navbar-title-container">
                 <Link to="/" className="navbar-title">
-                    Home
+                    doji365
                 </Link>
             </div>
             <div className="theme-toggle" onClick={toggleTheme}>

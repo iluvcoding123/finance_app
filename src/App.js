@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import InterestCalculator from "./pages/InterestCalculator";
+import GrowthSim from "./pages/GrowthSim";
 import "./App.css";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
             <Navbar toggleTheme={toggleTheme} />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/interestcalculator" element={<InterestCalculator />} />
+                <Route path="/growthsim" element={<GrowthSim />} />
             </Routes>
         </Router>
     );
