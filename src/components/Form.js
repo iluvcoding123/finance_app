@@ -94,7 +94,7 @@ function Form({ onCalculate }) {
                         required
                     />
                 </div>
-                <button type="submit" className="form-button">Calculate</button>
+                <button type="submit" className="form-button">Simulate</button>
             </form>
         </div>
     );
