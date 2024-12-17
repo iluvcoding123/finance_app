@@ -18,6 +18,14 @@ function Form({ onCalculate }) {
         }
     };
 
+    const handleTestData = () => {
+        setInvestmentType("stocks");
+        setStartingAmount("10000");
+        setMonthlySavings("500");
+        setInterestRate("10");
+        setTimePeriod("40");
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         onCalculate({
@@ -94,7 +102,16 @@ function Form({ onCalculate }) {
                         required
                     />
                 </div>
-                <button type="submit" className="form-button">Simulate</button>
+                <div className="button-group">
+                    <button type="submit" className="form-button">Simulate</button>
+                    <button 
+                        type="button" 
+                        onClick={handleTestData}
+                        className="form-button test-button"
+                    >
+                        Test Data
+                    </button>
+                </div>
             </form>
         </div>
     );
