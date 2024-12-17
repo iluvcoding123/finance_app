@@ -11,7 +11,7 @@ function Form({ onCalculate }) {
     const handleInvestmentTypeChange = (e) => {
         const selectedType = e.target.value;
         if (selectedType === 'mixed') {
-            alert("Mixed Portfolio calculations are a premium feature coming soon!");
+            alert("The Mixed Portfolio feature is coming soon!");
             setInvestmentType("compound"); // Reset to default option
         } else {
             setInvestmentType(selectedType);

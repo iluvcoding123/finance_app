@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Dropdown from "./Dropdown"; // Import Dropdown component
+import Dropdown from "./Dropdown";
 
 function Navbar({ toggleTheme }) {
     return (
@@ -12,7 +12,7 @@ function Navbar({ toggleTheme }) {
                     alt="Menu Button"
                     className="menu-button-icon"
                 />
-                <Dropdown /> {/* Add Dropdown component here */}
+                <Dropdown />
             </div>
             <div className="navbar-title-container">
                 <Link to="/" className="navbar-title">
