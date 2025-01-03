@@ -8,8 +8,7 @@ function Screener() {
     const [stockQuote, setStockQuote] = useState(null); // Fetched stock quote data
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null); // For error handling
-
-    const API_KEY = 'ctrmhv9r01qhb16n8qc0ctrmhv9r01qhb16n8qcg'; // Replace with your actual API key
+    const API_KEY = process.env.REACT_APP_FINNHUB_API_KEY; 
 
     // Fetch stock data for a given symbol
     async function fetchStockData() {
