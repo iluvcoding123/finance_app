@@ -1,24 +1,56 @@
+/* General styles for the Screener */
 .screener-container {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    background-color: var(--bg-color); /* Dynamic background */
+    color: var(--text-color); /* Dynamic text color */
+    border: 1px solid var(--input-border-color); /* Dynamic border */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for dark theme */
+    margin-top: 80px;
 }
 
-.screener-filters {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
+.screener-container h1 {
+    text-align: center;
+    color: var(--text-color); /* Dynamic text color */
 }
 
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+/* Filter container styles */
+.filters-container {
+    margin-bottom: 20px;
 }
 
-.filter-group select {
+.filters-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color); /* Dynamic text color */
+}
+
+.filters-container select {
+    width: 100%;
     padding: 8px;
+    border: 1px solid var(--input-border-color); /* Dynamic border */
     border-radius: 4px;
-    border: 1px solid var(--input-border-color, #ccc);
-} 
+    font-size: 16px;
+    color: var(--input-text-color); /* Dynamic input text color */
+    background-color: var(--input-bg-color); /* Dynamic input background */
+}
+
+/* Results container styles */
+.results-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--form-bg); /* Dynamic lighter background for results */
+    border: 1px solid var(--input-border-color); /* Dynamic border */
+    border-radius: 4px;
+    color: var(--text-color); /* Dynamic text color */
+}
+
+.results-container p {
+    margin: 0;
+    color: var(--text-color); /* Dynamic text color */
+    font-style: italic;
+}

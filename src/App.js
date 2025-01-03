@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import GrowthSim from "./pages/GrowthSim";
+import Screener from './pages/Screener';
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/growthsim" element={<GrowthSim />} />
+                <Route path="/screener" element={<Screener />} />
             </Routes>
         </Router>
     );
